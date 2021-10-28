@@ -1,8 +1,8 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include "GL/glew.h"
-#include "glfw3.h"
+#include "GLEW/include/GL/glew.h"
+#include "GLFW/include/glfw3.h"
 #include "Export.h"
 #include <iostream>
 

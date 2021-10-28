@@ -1,10 +1,12 @@
 #include "Program.h"
 
 Program::Program() {
-	
+	window = Window::window->Instance();
 }
 
 Program::Program(int width, int height, const char* tittle) {
+	window = Window::window->Instance();
+	//
 	Window::window->Width(width);
 	Window::window->Height(height);
 	Window::window->Tittle(tittle);

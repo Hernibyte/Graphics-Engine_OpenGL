@@ -18,6 +18,8 @@ public:
 	virtual void FixedUpdate() = 0;
 	virtual void Sleep() = 0;
 private:
+	Window* window;
+
 	void Core_Awake();
 	void Core_Start();
 	void Core_LateUpdate();

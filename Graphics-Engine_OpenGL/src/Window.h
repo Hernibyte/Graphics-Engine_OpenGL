@@ -3,9 +3,10 @@
 
 #include "GL/glew.h"
 #include "glfw3.h"
+#include "Export.h"
 #include <iostream>
 
-class Window {
+class ENGINE_API Window {
 public:
 	static Window* window;
 

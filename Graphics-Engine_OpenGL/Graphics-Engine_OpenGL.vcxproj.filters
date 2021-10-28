@@ -7,15 +7,24 @@
     <Filter Include="Source\Window">
       <UniqueIdentifier>{1e2a1b9f-c7e4-45d9-9cf2-f00e01e36222}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Program">
+      <UniqueIdentifier>{38d27918-7bd3-4515-b348-427f9e068d16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
       <Filter>Source\Window</Filter>
     </ClCompile>
+    <ClCompile Include="src\Program.cpp">
+      <Filter>Source\Program</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Window.h">
       <Filter>Source\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Program.h">
+      <Filter>Source\Program</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

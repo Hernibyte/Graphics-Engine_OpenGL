@@ -1,7 +1,9 @@
 #include "Program.h"
 
 Program::Program() {
-	
+	Window::window->Width(1280);
+	Window::window->Height(720);
+	Window::window->Tittle("Window");
 }
 
 Program::Program(int width, int height, const char* tittle) {
@@ -21,7 +23,11 @@ void Program::Run() {
 	Core_Start();
 	Start();
 
+	Window::window->SetWindowShouldClose(true);
+
 	while (Window::window->IsWindowShouldClose()) {
+		Window::window->Clear();
+
 		Core_LateUpdate();
 		LateUpdate();
 

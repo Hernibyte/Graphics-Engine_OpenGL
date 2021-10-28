@@ -3,7 +3,7 @@
 
 #include "Window.h"
 
-class Program {
+class ENGINE_API Program {
 public:
 	Program();
 	Program(int width, int height, const char* tittle);

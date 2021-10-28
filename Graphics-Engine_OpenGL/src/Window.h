@@ -1,11 +1,12 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include "GL/glew.h"
-#include "glfw3.h"
+#include "GLEW/include/GL/glew.h"
+#include "GLFW/include/glfw3.h"
+#include "Export.h"
 #include <iostream>
 
-class Window {
+class ENGINE_API Window {
 public:
 	static Window* window;
 
@@ -14,12 +15,6 @@ public:
 	Window* operator=(const Window&) = delete;
 
 	void Destroy();
-
-	Window* Instance() { 
-		if (window == nullptr)
-			window = new Window();
-		return window;
-	}
 
 	void Width(int width);
 	int Width();
@@ -36,13 +31,15 @@ public:
 	GLFWwindow* glfwWindow();
 
 	void Refresh();
+
+	void Clear(int r = 1, int g = 1, int b = 1, int a = 1);
 private:
+	void Start();
+
 	int width;
 	int height;
 	const char* tittle;
 	GLFWwindow* WinMain;
-
-	void Start();
 };
 
 #endif // !WINDOW_H

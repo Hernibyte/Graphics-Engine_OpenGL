@@ -4,10 +4,18 @@
     <Filter Include="Source">
       <UniqueIdentifier>{9bd78541-a274-4919-a025-1cccc98afe09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Window">
+      <UniqueIdentifier>{1e2a1b9f-c7e4-45d9-9cf2-f00e01e36222}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Source.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>Source\Window</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Window.h">
+      <Filter>Source\Window</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

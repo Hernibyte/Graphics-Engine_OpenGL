@@ -1,10 +1,8 @@
 #include "Window.h"
 
-Window* Window::window = nullptr;
+Window* Window::window = new Window();
 
-Window::Window() : width(1280), height(720), tittle("Standard") {
-	WinMain = NULL;
-	//
+Window::Window() : width(1280), height(720), tittle("Window") {
 	Start();
 }
 
@@ -55,6 +53,11 @@ void Window::Refresh() {
 	glfwPollEvents();
 }
 
+void Window::Clear(int r, int g, int b, int a) {
+	glClearColor(r, g, b, a);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
 void Window::Start() {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -78,4 +81,5 @@ void Window::Start() {
 	//
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	std::cout << "hola" << std::endl;
 }

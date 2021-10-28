@@ -8,6 +8,12 @@ Window::Window() : width(1280), height(720), tittle("Standard") {
 	Start();
 }
 
+void Window::Destroy() {
+	glfwTerminate();
+	glfwDestroyWindow(WinMain);
+	delete window;
+}
+
 void Window::Width(int width)  {
 	this->width = width;
 }
@@ -36,6 +42,19 @@ GLFWwindow* Window::glfwWindow() {
 	return WinMain;
 }
 
+void Window::SetWindowShouldClose(bool state) {
+	glfwSetWindowShouldClose(WinMain, state);
+}
+
+bool Window::IsWindowShouldClose() {
+	return glfwWindowShouldClose(WinMain);
+}
+
+void Window::Refresh() {
+	glfwSwapBuffers(WinMain);
+	glfwPollEvents();
+}
+
 void Window::Start() {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -44,7 +63,7 @@ void Window::Start() {
 	//
 	WinMain = glfwCreateWindow(width, height, tittle, NULL, NULL);
 	if (WinMain == NULL) {
-		std::cout << "Failed to c reate Window" << std::endl;
+		std::cout << "Failed to create Window" << std::endl;
 		glfwTerminate();
 		exit(-1);
 	}

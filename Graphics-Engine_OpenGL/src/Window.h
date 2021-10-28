@@ -13,6 +13,8 @@ public:
 	Window(Window& other) = delete;
 	Window* operator=(const Window&) = delete;
 
+	void Destroy();
+
 	Window* Instance() { 
 		if (window == nullptr)
 			window = new Window();
@@ -28,7 +30,12 @@ public:
 	void Tittle(const char* tittle);
 	const char* Tittle();
 
+	void SetWindowShouldClose(bool state);
+	bool IsWindowShouldClose();
+
 	GLFWwindow* glfwWindow();
+
+	void Refresh();
 private:
 	int width;
 	int height;

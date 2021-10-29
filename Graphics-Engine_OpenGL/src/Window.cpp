@@ -6,10 +6,9 @@ Window::Window() : width(1280), height(720), tittle("Window") {
 	Start();
 }
 
-void Window::Destroy() {
+Window::~Window() {
 	glfwTerminate();
 	glfwDestroyWindow(WinMain);
-	delete window;
 }
 
 void Window::Width(int width)  {
@@ -81,5 +80,4 @@ void Window::Start() {
 	//
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	std::cout << "hola" << std::endl;
 }

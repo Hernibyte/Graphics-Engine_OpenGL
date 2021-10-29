@@ -8,17 +8,20 @@
     <Filter Include="Source">
       <UniqueIdentifier>{812d3eab-71c1-4910-90dc-809bdd4d0c7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Tools">
-      <UniqueIdentifier>{1dfa7c79-b0b2-4196-91d5-71b1efcf5a3a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Window">
-      <UniqueIdentifier>{4626e457-3596-4c5b-9402-529dc689d0df}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Renderer">
       <UniqueIdentifier>{fe971325-1212-4cdd-877f-bd624333be38}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Program">
       <UniqueIdentifier>{99aa8a4c-d602-453c-8271-1f2564177aa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Window">
+      <UniqueIdentifier>{4626e457-3596-4c5b-9402-529dc689d0df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{1dfa7c79-b0b2-4196-91d5-71b1efcf5a3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\StandardShader">
+      <UniqueIdentifier>{3649321a-56ca-4478-844c-54cd1aed9666}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,10 +46,15 @@
       <Filter>Source\Program</Filter>
     </ClInclude>
     <ClInclude Include="src\Export.h">
-      <Filter>Source\Tools</Filter>
+      <Filter>Tools</Filter>
     </ClInclude>
     <ClInclude Include="src\ShaderProgramSource.h">
-      <Filter>Source\Tools</Filter>
+      <Filter>Tools</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\StandardShader\StandardShader.glsl">
+      <Filter>Tools\StandardShader</Filter>
+    </None>
   </ItemGroup>
 </Project>

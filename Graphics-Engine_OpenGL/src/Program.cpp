@@ -13,7 +13,8 @@ Program::Program(int width, int height, const char* tittle) {
 }
 
 Program::~Program() {
-	Window::window->Destroy();
+	delete Window::window;
+	delete Renderer::render;
 }
 
 void Program::Run() {
@@ -45,7 +46,12 @@ void Program::Run() {
 }
 
 void Program::Core_Awake() {
-
+	ShaderProgramSource source = Renderer::render->ParceShader("src/StandardShader/StandardShader.glsl");
+	Renderer::render->CreateProgram(source.Vertex, source.Fragment);
+	//
+	Renderer::render->GenerateBuffers();
+	Renderer::render->BindBuffers();
+	Renderer::render->VertexAttributes();
 }
 
 void Program::Core_Start() {
@@ -53,7 +59,7 @@ void Program::Core_Start() {
 }
 
 void Program::Core_LateUpdate() {
-
+	Renderer::render->Draw();
 }
 
 void Program::Core_Update() {

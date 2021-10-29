@@ -10,6 +10,9 @@ class Renderer {
 public:
 	static Renderer* render;
 
+	Renderer(Renderer& other) = delete;
+	Renderer* operator=(const Renderer&) = delete;
+
 	Renderer();
 	~Renderer();
 
@@ -23,11 +26,9 @@ public:
 
 	void Draw();
 
-private:
-	unsigned int vao;
-	unsigned int vbo;
-	unsigned int ebo;
-	unsigned int program;
+	ShaderProgramSource ParceShader(const std::string& filepath);
+
+	void CreateProgram(const std::string& vertexShaderSource, const std::string& fragmentShaderSource);
 
 	void GenerateBuffers();
 
@@ -36,12 +37,24 @@ private:
 	void ClearBuffers();
 
 	void VertexAttributes();
+private:
+	unsigned int vao;
+	unsigned int vbo;
+	unsigned int ebo;
+	unsigned int program;
 
-	ShaderProgramSource ParceShader(const std::string& filepath);
+	float vertex[32] = {
+		 0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 1.0f,
+		 0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, 0.0f,   1.0f, 1.0f, 0.0f,
+		-0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 1.0f
+	};
+	unsigned int index[6] = {
+		0, 1, 3,
+		1, 2, 3
+	};
 
 	unsigned int CompileShader(unsigned int type, const std::string& source);
-
-	void CreateProgram(const std::string& vertexShaderSource, const std::string& fragmentShaderSource);
 };
 
 #endif // !RENDERER_H

@@ -6,10 +6,9 @@ Window::Window() : width(1280), height(720), tittle("Window") {
 	Start();
 }
 
-void Window::Destroy() {
+Window::~Window() {
 	glfwTerminate();
 	glfwDestroyWindow(WinMain);
-	delete window;
 }
 
 void Window::Width(int width)  {

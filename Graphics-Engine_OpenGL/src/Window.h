@@ -10,11 +10,11 @@ class ENGINE_API Window {
 public:
 	static Window* window;
 
-	Window();
 	Window(Window& other) = delete;
 	Window* operator=(const Window&) = delete;
 
-	void Destroy();
+	Window();
+	~Window();
 
 	void Width(int width);
 	int Width();

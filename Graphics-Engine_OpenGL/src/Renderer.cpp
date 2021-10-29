@@ -7,10 +7,6 @@ Renderer::Renderer() {
 	vao = 0;
 	vbo = 0;
 	ebo = 0;
-
-	GenerateBuffers();
-	BindBuffers();
-	VertexAttributes();
 }
 
 Renderer::~Renderer() {
@@ -34,7 +30,9 @@ unsigned int& Renderer::EBO() {
 }
 
 void Renderer::Draw() {
-	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertex), vertex, GL_DYNAMIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(index), index, GL_DYNAMIC_DRAW);
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }
 
 void Renderer::GenerateBuffers() {
@@ -63,18 +61,18 @@ void Renderer::VertexAttributes() {
 }
 
 ShaderProgramSource Renderer::ParceShader(const std::string& filepath) {
-	std::fstream stream(filepath);
+	std::ifstream stream(filepath);
 
 	enum class ShaderType {
 		NONE = -1,
 		VERTEX,
 		FRAGMENT
 	};
-	
+
 	std::string line;
 	std::stringstream ss[2];
 	ShaderType type = ShaderType::NONE;
-	while (getline(stream, line)) {
+	while (std::getline(stream, line)) {
 		if (line.find("#shader") != std::string::npos) {
 			if (line.find("vertex") != std::string::npos)
 				type = ShaderType::VERTEX;
@@ -104,7 +102,7 @@ unsigned int Renderer::CompileShader(unsigned int type, const std::string& sourc
 		glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
 		char* message = (char*)_malloca(length * sizeof(char));
 		glGetShaderInfoLog(id, length, &length, message);
-		std::cout << "Failed to compile " << (type == GL_VERTEX_SHADER ? "vertex" : "gragment") << " shader!" << std::endl;
+		std::cout << "Failed to compile " << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << " shader!" << std::endl;
 		std::cout << message << std::endl;
 		glDeleteShader(id);
 		return 0;

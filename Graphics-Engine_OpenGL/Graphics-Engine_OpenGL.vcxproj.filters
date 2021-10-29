@@ -1,37 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>{9bd78541-a274-4919-a025-1cccc98afe09}</UniqueIdentifier>
+      <UniqueIdentifier>{812d3eab-71c1-4910-90dc-809bdd4d0c7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tools">
+      <UniqueIdentifier>{1dfa7c79-b0b2-4196-91d5-71b1efcf5a3a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Window">
-      <UniqueIdentifier>{1e2a1b9f-c7e4-45d9-9cf2-f00e01e36222}</UniqueIdentifier>
+      <UniqueIdentifier>{4626e457-3596-4c5b-9402-529dc689d0df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Renderer">
+      <UniqueIdentifier>{fe971325-1212-4cdd-877f-bd624333be38}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Program">
-      <UniqueIdentifier>{38d27918-7bd3-4515-b348-427f9e068d16}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Tools">
-      <UniqueIdentifier>{339b8f63-6e36-4b65-ac46-4eb311a06908}</UniqueIdentifier>
+      <UniqueIdentifier>{99aa8a4c-d602-453c-8271-1f2564177aa3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
       <Filter>Source\Window</Filter>
     </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Source\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Program.cpp">
       <Filter>Source\Program</Filter>
     </ClCompile>
-    <ClCompile Include="src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Window.h">
       <Filter>Source\Window</Filter>
     </ClInclude>
+    <ClInclude Include="src\Renderer.h">
+      <Filter>Source\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Program.h">
       <Filter>Source\Program</Filter>
     </ClInclude>
     <ClInclude Include="src\Export.h">
-      <Filter>Tools</Filter>
+      <Filter>Source\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShaderProgramSource.h">
+      <Filter>Source\Tools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

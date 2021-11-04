@@ -6,7 +6,7 @@
 #include <fstream>
 #include <sstream>
 
-class Renderer {
+class ENGINE_API Renderer {
 public:
 	static Renderer* render;
 

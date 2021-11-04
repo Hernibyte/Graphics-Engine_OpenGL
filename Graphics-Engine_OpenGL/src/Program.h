@@ -2,7 +2,6 @@
 #define PROGRAM_H
 
 #include "Window.h"
-#include "Renderer.h"
 
 class ENGINE_API Program {
 public:

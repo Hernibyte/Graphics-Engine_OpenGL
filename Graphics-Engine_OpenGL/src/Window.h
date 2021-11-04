@@ -1,10 +1,8 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include "GLEW/include/GL/glew.h"
+#include "Renderer.h"
 #include "GLFW/include/glfw3.h"
-#include "Export.h"
-#include <iostream>
 
 class ENGINE_API Window {
 public:

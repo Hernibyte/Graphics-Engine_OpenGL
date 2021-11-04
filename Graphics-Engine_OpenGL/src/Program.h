@@ -12,12 +12,12 @@ public:
 
 	void Run();
 
-	virtual void Awake() {};
-	virtual void Start() {};
-	virtual void LateUpdate() {};
-	virtual void Update() {};
-	virtual void FixedUpdate() {};
-	virtual void Sleep() {};
+	virtual void Awake() {}
+	virtual void Start() {}
+	virtual void LateUpdate() {}
+	virtual void Update() {}
+	virtual void FixedUpdate() {}
+	virtual void Sleep() {}
 private:
 	void Core_Awake();
 	void Core_Start();

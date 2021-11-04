@@ -10,8 +10,10 @@ class Renderer {
 public:
 	static Renderer* render;
 
-	Renderer(Renderer& other) = delete;
+	Renderer(const Renderer&) = delete;
+	Renderer(Renderer&&) = delete;
 	Renderer* operator=(const Renderer&) = delete;
+	Renderer* operator=(Renderer&&) = delete;
 
 	Renderer();
 	~Renderer();

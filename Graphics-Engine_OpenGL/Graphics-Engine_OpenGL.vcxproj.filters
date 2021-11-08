@@ -23,6 +23,9 @@
     <Filter Include="Tools\StandardShader">
       <UniqueIdentifier>{3649321a-56ca-4478-844c-54cd1aed9666}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Scenes">
+      <UniqueIdentifier>{972a735d-97eb-4fb8-b8cb-f0455bfbf750}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
@@ -33,6 +36,12 @@
     </ClCompile>
     <ClCompile Include="src\Program.cpp">
       <Filter>Source\Program</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene.cpp">
+      <Filter>Source\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneStorage.cpp">
+      <Filter>Source\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="src\Source.cpp" />
   </ItemGroup>
@@ -51,6 +60,12 @@
     </ClInclude>
     <ClInclude Include="src\ShaderProgramSource.h">
       <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene.h">
+      <Filter>Source\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneStorage.h">
+      <Filter>Source\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

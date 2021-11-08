@@ -2,7 +2,6 @@
 #define SCENE_H
 
 #include <unordered_map>
-#include <iostream>
 
 class Scene {
 public:

@@ -1,17 +1,17 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include "GLEW/include/GL/glew.h"
+#include "Renderer.h"
 #include "GLFW/include/glfw3.h"
-#include "Export.h"
-#include <iostream>
 
 class ENGINE_API Window {
 public:
-	static Window* window;
+	static Window window;
 
-	Window(Window& other) = delete;
+	Window(const Window&) = delete;
+	Window(Window&&) = delete;
 	Window* operator=(const Window&) = delete;
+	Window* operator=(Window&&) = delete;
 
 	Window();
 	~Window();

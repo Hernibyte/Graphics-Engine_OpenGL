@@ -2,6 +2,7 @@
 #define PROGRAM_H
 
 #include "Window.h"
+#include "SceneStorage.h"
 
 class ENGINE_API Program {
 public:
@@ -12,6 +13,8 @@ public:
 
 protected:
 	~Program() = default;
+
+	Scene_Storage SceneStorage;
 
 	virtual void Awake() {}
 	virtual void Start() {}

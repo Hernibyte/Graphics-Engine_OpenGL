@@ -7,9 +7,11 @@ class ENGINE_API Program {
 public:
 	Program();
 	Program(int width, int height, const char* tittle);
-	~Program();
 
 	void Run();
+
+protected:
+	~Program() = default;
 
 	virtual void Awake() {}
 	virtual void Start() {}

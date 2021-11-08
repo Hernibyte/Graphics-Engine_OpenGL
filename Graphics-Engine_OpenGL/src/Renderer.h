@@ -8,7 +8,7 @@
 
 class ENGINE_API Renderer {
 public:
-	static Renderer* render;
+	static Renderer render;
 
 	Renderer(const Renderer&) = delete;
 	Renderer(Renderer&&) = delete;

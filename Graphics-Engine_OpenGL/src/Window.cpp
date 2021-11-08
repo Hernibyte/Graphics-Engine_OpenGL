@@ -1,6 +1,6 @@
 #include "Window.h"
 
-Window* Window::window = new Window();
+Window Window::window;
 
 Window::Window() : width(1280), height(720), tittle("Window") {
 	Start();

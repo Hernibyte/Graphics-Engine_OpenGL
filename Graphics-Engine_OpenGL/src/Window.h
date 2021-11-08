@@ -6,7 +6,7 @@
 
 class ENGINE_API Window {
 public:
-	static Window* window;
+	static Window window;
 
 	Window(const Window&) = delete;
 	Window(Window&&) = delete;

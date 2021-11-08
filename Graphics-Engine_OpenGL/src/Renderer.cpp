@@ -1,6 +1,6 @@
 #include "Renderer.h"
 
-Renderer* Renderer::render = new Renderer();
+Renderer Renderer::render;
 
 Renderer::Renderer() {
 	program = 0;

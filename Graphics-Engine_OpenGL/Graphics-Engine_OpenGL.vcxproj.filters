@@ -26,6 +26,9 @@
     <Filter Include="Source\Scenes">
       <UniqueIdentifier>{972a735d-97eb-4fb8-b8cb-f0455bfbf750}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\GameObject">
+      <UniqueIdentifier>{0fd6b253-1aea-4234-b111-4e87e0c13aac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
@@ -42,6 +45,9 @@
     </ClCompile>
     <ClCompile Include="src\SceneStorage.cpp">
       <Filter>Source\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject.cpp">
+      <Filter>Source\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="src\SceneStorage.h">
       <Filter>Source\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject.h">
+      <Filter>Source\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

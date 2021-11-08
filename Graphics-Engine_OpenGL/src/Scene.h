@@ -2,10 +2,13 @@
 #define SCENE_H
 
 #include <unordered_map>
+#include "GameObject.h"
 
-class Scene {
+class ENGINE_API Scene {
 public:
 
+private:
+	
 };
 
 #endif // !SCENE_H

@@ -4,7 +4,7 @@
 #include "Scene.h"
 #include <stdexcept>
 
-class Scene_Storage {
+class ENGINE_API Scene_Storage {
 public:
 	Scene_Storage() = default;
 

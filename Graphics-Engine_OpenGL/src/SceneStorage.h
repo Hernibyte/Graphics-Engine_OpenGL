@@ -4,7 +4,7 @@
 #include "Scene.h"
 #include <stdexcept>
 
-class ENGINE_API Scene_Storage {
+class Scene_Storage {
 public:
 	Scene_Storage() = default;
 
@@ -14,7 +14,7 @@ public:
 	Scene_Storage* operator=(Scene_Storage&&) = delete;
 
 	void CreateScene(std::string name);
-	Scene GetScene(std::string name);
+	Scene* GetScene(std::string name);
 
 private:
 	std::unordered_map<std::string, Scene> scenes;

@@ -4,7 +4,7 @@
 #include "Renderer.h"
 #include "GLFW/include/glfw3.h"
 
-class ENGINE_API Window {
+class Window {
 public:
 	static Window window;
 

@@ -1,11 +1,10 @@
 #ifndef SHADERPROGRAMSOURCE_H
 #define SHADERPROGRAMSOURCE_H
 
-#include "Export.h"
 #include <iostream>
 #include <string>
 
-struct ENGINE_API ShaderProgramSource {
+struct ShaderProgramSource {
 	std::string Vertex;
 	std::string Fragment;
 };

@@ -40,6 +40,10 @@ void Program::Run() {
 	Sleep();
 }
 
+void Program::SetMainScene(std::string name) {
+	mainScene = name;
+}
+
 void Program::Core_Awake() {
 	ShaderProgramSource source = Renderer::render.ParceShader("src/StandardShader/StandardShader.glsl");
 	Renderer::render.CreateProgram(source.Vertex, source.Fragment);
@@ -47,22 +51,31 @@ void Program::Core_Awake() {
 	Renderer::render.GenerateBuffers();
 	Renderer::render.BindBuffers();
 	Renderer::render.VertexAttributes();
+
+	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
+		g->Awake();
 }
 
 void Program::Core_Start() {
-
+	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
+		g->Start();
 }
 
 void Program::Core_LateUpdate() {
 	Renderer::render.Draw();
+
+	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
+		g->LateUpdate();
 }
 
 void Program::Core_Update() {
-
+	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
+		g->Update();
 }
 
 void Program::Core_FixedUpdate() {
-
+	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
+		g->FixedUpdate();
 }
 
 void Program::Core_Sleep() {

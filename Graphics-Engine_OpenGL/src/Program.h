@@ -4,7 +4,7 @@
 #include "Window.h"
 #include "SceneStorage.h"
 
-class ENGINE_API Program {
+class Program {
 public:
 	Program();
 	Program(int width, int height, const char* tittle);
@@ -16,6 +16,8 @@ protected:
 
 	Scene_Storage SceneStorage;
 
+	void SetMainScene(std::string name);
+
 	virtual void Awake() {}
 	virtual void Start() {}
 	virtual void LateUpdate() {}
@@ -23,6 +25,8 @@ protected:
 	virtual void FixedUpdate() {}
 	virtual void Sleep() {}
 private:
+	std::string mainScene;
+
 	void Core_Awake();
 	void Core_Start();
 	void Core_LateUpdate();

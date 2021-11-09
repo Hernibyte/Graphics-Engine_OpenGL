@@ -2,7 +2,6 @@
 #define PROGRAM_H
 
 #include "Window.h"
-#include "SceneStorage.h"
 
 class Program {
 public:

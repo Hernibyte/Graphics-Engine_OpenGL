@@ -3,6 +3,8 @@
 
 #include "GLEW/include/GL/glew.h"
 #include "ShaderProgramSource.h"
+#include "SceneStorage.h"
+#include "SpriteRenderer.h"
 #include <fstream>
 #include <sstream>
 
@@ -26,7 +28,7 @@ public:
 
 	unsigned int& EBO();
 
-	void Draw();
+	void Draw(Scene& scene);
 
 	ShaderProgramSource ParceShader(const std::string& filepath);
 
@@ -44,17 +46,6 @@ private:
 	unsigned int vbo;
 	unsigned int ebo;
 	unsigned int program;
-
-	float vertex[32] = {
-		 0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 1.0f,
-		 0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 1.0f,
-		-0.5f, -0.5f, 0.0f,   1.0f, 1.0f, 0.0f,
-		-0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 1.0f
-	};
-	unsigned int index[6] = {
-		0, 1, 3,
-		1, 2, 3
-	};
 
 	unsigned int CompileShader(unsigned int type, const std::string& source);
 };

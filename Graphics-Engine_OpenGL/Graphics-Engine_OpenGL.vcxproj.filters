@@ -32,6 +32,9 @@
     <Filter Include="Source\Component">
       <UniqueIdentifier>{033b3101-082a-4d57-932d-d5f2e41b5edc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Component\SpriteRenderer">
+      <UniqueIdentifier>{37d16ff1-6bb7-4725-ab99-975cd1c2d52b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
@@ -77,6 +80,9 @@
     </ClInclude>
     <ClInclude Include="src\Script.h">
       <Filter>Source\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpriteRenderer.h">
+      <Filter>Source\Component\SpriteRenderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

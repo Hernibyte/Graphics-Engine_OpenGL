@@ -62,7 +62,7 @@ void Program::Core_Start() {
 }
 
 void Program::Core_LateUpdate() {
-	Renderer::render.Draw();
+	Renderer::render.Draw(*SceneStorage.GetScene(mainScene));
 
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
 		g->LateUpdate();

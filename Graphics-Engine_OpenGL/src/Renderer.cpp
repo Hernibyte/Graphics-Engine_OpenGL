@@ -29,9 +29,19 @@ unsigned int& Renderer::EBO() {
 	return ebo;
 }
 
-void Renderer::Draw() {
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertex), vertex, GL_DYNAMIC_DRAW);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(index), index, GL_DYNAMIC_DRAW);
+void Renderer::Draw(Scene& scene) {
+	for (auto& g : scene.GetAllObjects()) {
+		SpriteRenderer* sprite = new SpriteRenderer();
+		if (g->TryGetComponent<SpriteRenderer>(*sprite)) {
+			glBufferData(GL_ARRAY_BUFFER, 
+				sizeof(sprite->vertex), sprite->vertex,
+				GL_DYNAMIC_DRAW);
+
+			glBufferData(GL_ELEMENT_ARRAY_BUFFER, 
+				sizeof(sprite->index), sprite->index, 
+				GL_DYNAMIC_DRAW);
+		}
+	}
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }
 

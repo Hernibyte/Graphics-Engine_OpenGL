@@ -7,9 +7,13 @@ Renderer::Renderer() {
 	vao = 0;
 	vbo = 0;
 	ebo = 0;
+
+	sprite = new SpriteRenderer();
 }
 
 Renderer::~Renderer() {
+	if(sprite != nullptr)
+		delete sprite;
 	ClearBuffers();
 }
 
@@ -31,7 +35,6 @@ unsigned int& Renderer::EBO() {
 
 void Renderer::Draw(Scene& scene) {
 	for (auto& g : scene.GetAllObjects()) {
-		SpriteRenderer* sprite = new SpriteRenderer();
 		if (g->TryGetComponent<SpriteRenderer>(*sprite)) {
 			glBufferData(GL_ARRAY_BUFFER, 
 				sizeof(sprite->vertex), sprite->vertex,
@@ -40,9 +43,9 @@ void Renderer::Draw(Scene& scene) {
 			glBufferData(GL_ELEMENT_ARRAY_BUFFER, 
 				sizeof(sprite->index), sprite->index, 
 				GL_DYNAMIC_DRAW);
+			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		}
 	}
-	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }
 
 void Renderer::GenerateBuffers() {

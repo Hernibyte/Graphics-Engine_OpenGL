@@ -13,9 +13,10 @@ public:
 protected:
 	~Program() = default;
 
-	Scene_Storage SceneStorage;
+	void CreateScene(std::string_view name);
+	Scene* GetScene(std::string_view name);
 
-	void SetMainScene(std::string name);
+	void SetMainScene(std::string_view name);
 
 	virtual void Awake() {}
 	virtual void Start() {}
@@ -25,6 +26,7 @@ protected:
 	virtual void Sleep() {}
 private:
 	std::string mainScene;
+	Scene_Storage SceneStorage;
 
 	void Core_Awake();
 	void Core_Start();

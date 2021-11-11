@@ -48,6 +48,8 @@ private:
 	unsigned int program;
 
 	unsigned int CompileShader(unsigned int type, const std::string& source);
+
+	SpriteRenderer* sprite;
 };
 
 #endif // !RENDERER_H

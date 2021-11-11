@@ -1,11 +1,11 @@
 #include "SceneStorage.h"
 
-void Scene_Storage::CreateScene(std::string name) {
-	scenes[name] = Scene();
+void Scene_Storage::CreateScene(std::string_view name) {
+	scenes[name.data()] = Scene();
 }
 
-Scene* Scene_Storage::GetScene(std::string name) {
-	auto it = scenes.find(name);
+Scene* Scene_Storage::GetScene(std::string_view name) {
+	auto it = scenes.find(name.data());
 	if (it != scenes.end())
 		return &it->second;
 	else

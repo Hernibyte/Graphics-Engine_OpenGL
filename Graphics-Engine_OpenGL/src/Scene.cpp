@@ -17,9 +17,6 @@ Scene::~Scene() {
 
 void Scene::AddObject() {
 	Objects.push_back( new GameObject() );
-	std::cout << Objects.size() << " - " <<
-		Objects.capacity() << 
-		std::endl;
 }
 
 GameObject* Scene::GetObject(int index) {

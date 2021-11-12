@@ -59,6 +59,7 @@ void Program::Core_Awake() {
 	Renderer::render.GenerateBuffers();
 	Renderer::render.BindBuffers();
 	Renderer::render.VertexAttributes();
+	Renderer::render.GetUniformsLocation();
 
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
 		g->Awake();

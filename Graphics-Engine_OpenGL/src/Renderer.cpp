@@ -9,6 +9,8 @@ Renderer::Renderer() {
 	ebo = 0;
 
 	sprite = new SpriteRenderer();
+
+	modelLocation = 0;
 }
 
 Renderer::~Renderer() {
@@ -36,6 +38,9 @@ unsigned int& Renderer::EBO() {
 void Renderer::Draw(Scene& scene) {
 	for (auto& g : scene.GetAllObjects()) {
 		if (g->TryGetComponent<SpriteRenderer>(*sprite)) {
+			glUniformMatrix4fv(modelLocation, 1, GL_FALSE,
+				glm::value_ptr(sprite->gameObject->transform.model));
+
 			glBufferData(GL_ARRAY_BUFFER, 
 				sizeof(sprite->vertex), sprite->vertex,
 				GL_DYNAMIC_DRAW);
@@ -71,6 +76,10 @@ void Renderer::VertexAttributes() {
 
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
+}
+
+void Renderer::GetUniformsLocation() {
+	modelLocation = glGetUniformLocation(program, "model");
 }
 
 ShaderProgramSource Renderer::ParceShader(const std::string& filepath) {

@@ -2,8 +2,9 @@
 #define GAMEOBJECT_H
 
 #include "Script.h"
+#include "Entity.h"
 
-class GameObject {
+class GameObject : public Entity {
 public:
 	GameObject() = default;
 	~GameObject() = default;

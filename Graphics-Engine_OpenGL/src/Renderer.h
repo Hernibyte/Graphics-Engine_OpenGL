@@ -41,6 +41,8 @@ public:
 	void ClearBuffers();
 
 	void VertexAttributes();
+
+	void GetUniformsLocation();
 private:
 	unsigned int vao;
 	unsigned int vbo;
@@ -50,6 +52,8 @@ private:
 	unsigned int CompileShader(unsigned int type, const std::string& source);
 
 	SpriteRenderer* sprite;
+	
+	unsigned int modelLocation;
 };
 
 #endif // !RENDERER_H

@@ -6,8 +6,10 @@ layout(location = 1) in vec3 inColor;
 
 out vec3 ourColor;
 
+uniform mat4 model;
+
 void main() {
-	gl_Position = vec4(inPosition, 1.0);
+	gl_Position = model * vec4(inPosition, 1.0);
 	ourColor = inColor;
 }
 

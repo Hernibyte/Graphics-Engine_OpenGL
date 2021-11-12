@@ -2,8 +2,9 @@
 #define GAMEOBJECT_H
 
 #include "Script.h"
+#include "Entity.h"
 
-class GameObject {
+class GameObject : public Entity {
 public:
 	GameObject() = default;
 	~GameObject() = default;
@@ -55,6 +56,17 @@ public:
 	T& GetComponent() const {
 		auto ptr(componentArray[GetComponentTypeID<T>()]);
 		return *static_cast<T*>(ptr);
+	}
+
+	template <typename T>
+	bool TryGetComponent(T& outComponent) const {
+		auto ptr(componentArray[GetComponentTypeID<T>()]);
+		if (ptr != nullptr) {
+			outComponent = *static_cast<T*>(ptr);
+			return true;
+		}
+		else
+			return false;
 	}
 
 private:

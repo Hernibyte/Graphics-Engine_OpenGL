@@ -32,6 +32,33 @@
     <Filter Include="Source\Component">
       <UniqueIdentifier>{033b3101-082a-4d57-932d-d5f2e41b5edc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Component\SpriteRenderer">
+      <UniqueIdentifier>{37d16ff1-6bb7-4725-ab99-975cd1c2d52b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath">
+      <UniqueIdentifier>{74d1da1b-d0b4-4db7-b519-442ac9a888c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Entity">
+      <UniqueIdentifier>{42c012d3-c12e-4735-9d47-c48ce303b29d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\Vector3">
+      <UniqueIdentifier>{74194df9-c373-4c25-a31e-0a3a2be7486b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\Vector4">
+      <UniqueIdentifier>{6a3e8a1e-406a-40cf-b870-53444d4b5434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\Quaternion">
+      <UniqueIdentifier>{23993420-ccb7-4815-b5b7-d2615a22bc5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\Matrix4x4">
+      <UniqueIdentifier>{5204340f-347d-4384-bd0a-5bb0127f07ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\MathEx">
+      <UniqueIdentifier>{a6ba2816-6986-4b8d-b37c-54d91a798ae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Transform">
+      <UniqueIdentifier>{19bd8472-1f84-4af0-a7c0-d67d2a544dae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
@@ -51,6 +78,24 @@
     </ClCompile>
     <ClCompile Include="src\GameObject.cpp">
       <Filter>Source\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\Vector3\vector3.cpp">
+      <Filter>Tools\MyMath\Vector3</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\Vector4\Vector4.cpp">
+      <Filter>Tools\MyMath\Vector4</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\Quaternion\Quaternion.cpp">
+      <Filter>Tools\MyMath\Quaternion</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\Matrix4x4\Matrix4x4.cpp">
+      <Filter>Tools\MyMath\Matrix4x4</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\MathEx\MathEx.cpp">
+      <Filter>Tools\MyMath\MathEx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Transform.cpp">
+      <Filter>Source\Transform</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +122,33 @@
     </ClInclude>
     <ClInclude Include="src\Script.h">
       <Filter>Source\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpriteRenderer.h">
+      <Filter>Source\Component\SpriteRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\My.h">
+      <Filter>Tools\MyMath</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity.h">
+      <Filter>Source\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\Vector3\vector3.h">
+      <Filter>Tools\MyMath\Vector3</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\Vector4\Vector4.h">
+      <Filter>Tools\MyMath\Vector4</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\Quaternion\Quaternion.h">
+      <Filter>Tools\MyMath\Quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\Matrix4x4\Matrix4x4.h">
+      <Filter>Tools\MyMath\Matrix4x4</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\MathEx\MathEx.h">
+      <Filter>Tools\MyMath\MathEx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Transform.h">
+      <Filter>Source\Transform</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,8 +13,8 @@ public:
 	Scene_Storage* operator=(const Scene_Storage&) = delete;
 	Scene_Storage* operator=(Scene_Storage&&) = delete;
 
-	void CreateScene(std::string name);
-	Scene* GetScene(std::string name);
+	void CreateScene(std::string_view name);
+	Scene* GetScene(std::string_view name);
 
 private:
 	std::unordered_map<std::string, Scene> scenes;

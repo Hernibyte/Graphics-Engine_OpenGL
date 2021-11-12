@@ -52,7 +52,7 @@ void Window::Refresh() {
 	glfwPollEvents();
 }
 
-void Window::Clear(int r, int g, int b, int a) {
+void Window::Clear(GLclampf r, GLclampf g, GLclampf b, GLclampf a) {
 	glClearColor(r, g, b, a);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }

@@ -40,8 +40,16 @@ void Program::Run() {
 	Sleep();
 }
 
-void Program::SetMainScene(std::string name) {
-	mainScene = name;
+void Program::CreateScene(std::string_view name) {
+	SceneStorage.CreateScene(name);
+}
+
+Scene* Program::GetScene(std::string_view name) {
+	return SceneStorage.GetScene(name);
+}
+
+void Program::SetMainScene(std::string_view name) {
+	mainScene = name.data();
 }
 
 void Program::Core_Awake() {
@@ -51,6 +59,7 @@ void Program::Core_Awake() {
 	Renderer::render.GenerateBuffers();
 	Renderer::render.BindBuffers();
 	Renderer::render.VertexAttributes();
+	Renderer::render.GetUniformsLocation();
 
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
 		g->Awake();
@@ -62,7 +71,7 @@ void Program::Core_Start() {
 }
 
 void Program::Core_LateUpdate() {
-	Renderer::render.Draw();
+	Renderer::render.Draw(*SceneStorage.GetScene(mainScene));
 
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
 		g->LateUpdate();

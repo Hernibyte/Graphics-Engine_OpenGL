@@ -32,7 +32,7 @@ public:
 
 	void Refresh();
 
-	void Clear(int r = 1, int g = 1, int b = 1, int a = 1);
+	void Clear(GLclampf r = 1, GLclampf g = 1, GLclampf b = 1, GLclampf a = 1);
 private:
 	void Start();
 

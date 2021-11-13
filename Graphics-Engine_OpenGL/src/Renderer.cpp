@@ -76,14 +76,16 @@ void Renderer::VertexAttributes() {
 
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
+
+
 }
 
 void Renderer::GetUniformsLocation() {
 	modelLocation = glGetUniformLocation(program, "model");
 }
 
-ShaderProgramSource Renderer::ParceShader(const std::string& filepath) {
-	std::ifstream stream(filepath);
+ShaderProgramSource Renderer::ParceShader(const std::string_view filepath) {
+	std::ifstream stream(filepath.data());
 
 	enum class ShaderType {
 		NONE = -1,

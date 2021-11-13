@@ -30,7 +30,7 @@ public:
 
 	void Draw(Scene& scene);
 
-	ShaderProgramSource ParceShader(const std::string& filepath);
+	ShaderProgramSource ParceShader(const std::string_view filepath);
 
 	void CreateProgram(const std::string& vertexShaderSource, const std::string& fragmentShaderSource);
 

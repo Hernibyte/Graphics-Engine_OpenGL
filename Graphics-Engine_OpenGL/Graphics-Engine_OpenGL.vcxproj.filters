@@ -97,7 +97,6 @@
     <ClCompile Include="src\Transform.cpp">
       <Filter>Source\Transform</Filter>
     </ClCompile>
-    <ClCompile Include="src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Window.h">
@@ -151,7 +150,6 @@
     <ClInclude Include="src\Transform.h">
       <Filter>Source\Transform</Filter>
     </ClInclude>
-    <ClInclude Include="src\Player.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\StandardShader\StandardShader.glsl">

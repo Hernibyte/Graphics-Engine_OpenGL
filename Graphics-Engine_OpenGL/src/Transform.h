@@ -10,21 +10,28 @@ private:
 	void RotateX(float x);
 	void RotateY(float y);
 	void RotateZ(float z);
-public:
-	Transform();
 
-	glm::mat4 model;
+	void UpdateModel();
+	
 	glm::mat4 translate;
 	glm::mat4 rotatex;
 	glm::mat4 rotatey;
 	glm::mat4 rotatez;
 	glm::mat4 scale;
 
-	void UpdateModel();
+	glm::vec3 myposition;
+	glm::quat myrotation;
+	glm::vec3 mylocalScale;
+public:
+	Transform();
 
-	glm::vec3 position;
-	glm::quat rotation;
-	glm::vec3 localScale;
+	glm::mat4 model;
+
+	My::Quaternion rotation;
+	My::Vector3 position;
+	My::Vector3 localScale;
+
+	void Update();
 
 	void Rotate(float x, float y, float z);
 	void Rotate(My::Quaternion quaternion);

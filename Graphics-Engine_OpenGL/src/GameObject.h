@@ -3,6 +3,28 @@
 
 #include "Script.h"
 #include "Entity.h"
+#include <vector>
+#include <memory>
+#include <algorithm>
+#include <bitset>
+#include <array>
+
+using ComponentID = std::size_t;
+
+inline ComponentID GetComponentTypeID() {
+	static ComponentID lastID = 0;
+	return lastID++;
+}
+
+template<typename T> inline ComponentID GetComponentTypeID() noexcept {
+	static ComponentID typeID = GetComponentTypeID();
+	return typeID;
+}
+
+constexpr std::size_t maxComponents = 32;
+
+using ComponentBitSet = std::bitset<maxComponents>;
+using ComponentArray = std::array<Script*, maxComponents>;
 
 class GameObject : public Entity {
 public:
@@ -25,6 +47,8 @@ public:
 	}
 
 	void Update() {
+		transform.Update();
+
 		for (auto& c : components)
 			c->Update();
 	}
@@ -43,6 +67,7 @@ public:
 	T& AddComponent(TArgs&&... mArgs) {
 		T* c(new T(std::forward<TArgs>(mArgs)...));
 		c->gameObject = this;
+		c->transform = &this->transform;
 		std::unique_ptr<Script> uPtr{ c };
 		components.emplace_back(std::move(uPtr));
 

@@ -3,6 +3,7 @@
 
 #include "Script.h"
 #include "Entity.h"
+#include "InputSystem.h"
 #include <vector>
 #include <memory>
 #include <algorithm>
@@ -68,6 +69,7 @@ public:
 		T* c(new T(std::forward<TArgs>(mArgs)...));
 		c->gameObject = this;
 		c->transform = &this->transform;
+		c->Input = &this->Input;
 		std::unique_ptr<Script> uPtr{ c };
 		components.emplace_back(std::move(uPtr));
 
@@ -99,6 +101,8 @@ private:
 
 	ComponentArray componentArray;
 	ComponentBitSet componentBitSet;
+
+	InputSystem Input;
 };
 
 #endif // !GAMEOBJECT_H

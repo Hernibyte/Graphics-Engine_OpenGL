@@ -2,12 +2,15 @@
 #define SCRIPT_H
 
 class GameObject;
-class Transform;
+struct Transform;
+struct InputSystem;
+#include "MyMath/My.h"
 
 class Script {
 public:
 	GameObject* gameObject = nullptr;
 	Transform* transform = nullptr;
+	InputSystem* Input = nullptr;
 
 	virtual void Awake() {}
 	virtual void Start() {}

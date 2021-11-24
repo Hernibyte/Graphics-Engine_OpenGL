@@ -13,7 +13,7 @@ public:
 protected:
 	~Program() = default;
 
-	void CreateScene(std::string_view name);
+	Scene* CreateScene(std::string_view name);
 	Scene* GetScene(std::string_view name);
 
 	void SetMainScene(std::string_view name);

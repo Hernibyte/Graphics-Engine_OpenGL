@@ -1,7 +1,8 @@
 #include "SceneStorage.h"
 
-void Scene_Storage::CreateScene(std::string_view name) {
+Scene* Scene_Storage::CreateScene(std::string_view name) {
 	scenes[name.data()] = Scene();
+	return &scenes[name.data()];
 }
 
 Scene* Scene_Storage::GetScene(std::string_view name) {

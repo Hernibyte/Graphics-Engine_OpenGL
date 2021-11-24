@@ -15,8 +15,9 @@ Scene::~Scene() {
 	}
 }
 
-void Scene::AddObject() {
+GameObject* Scene::AddObject() {
 	Objects.push_back( new GameObject() );
+	return Objects.back();
 }
 
 GameObject* Scene::GetObject(int index) {

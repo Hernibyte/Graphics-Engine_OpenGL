@@ -17,6 +17,10 @@ void Transform::UpdateModel() {
 	model = translate * rotatex * rotatey * rotatez * scale;
 }
 
+glm::mat4 Transform::Model() const {
+	return model;
+}
+
 void Transform::Update() {
 	if (myposition.x != position.x
 	|| myposition.y != position.y

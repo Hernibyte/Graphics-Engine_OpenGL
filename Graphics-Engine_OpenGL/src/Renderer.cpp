@@ -39,7 +39,7 @@ void Renderer::Draw(Scene& scene) {
 	for (auto& g : scene.GetAllObjects()) {
 		if (g->TryGetComponent<SpriteRenderer>(*sprite)) {
 			glUniformMatrix4fv(modelLocation, 1, GL_FALSE,
-				glm::value_ptr(sprite->gameObject->transform.model));
+				glm::value_ptr(sprite->gameObject->transform.Model()));
 
 			glBufferData(GL_ARRAY_BUFFER, 
 				sizeof(sprite->vertex), sprite->vertex,

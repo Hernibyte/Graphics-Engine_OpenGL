@@ -13,6 +13,8 @@ private:
 
 	void UpdateModel();
 	
+	glm::mat4 model;
+	
 	glm::mat4 translate;
 	glm::mat4 rotatex;
 	glm::mat4 rotatey;
@@ -25,7 +27,7 @@ private:
 public:
 	Transform();
 
-	glm::mat4 model;
+	glm::mat4 Model() const;
 
 	My::Quaternion rotation;
 	My::Vector3 position;

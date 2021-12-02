@@ -40,8 +40,8 @@ void Program::Run() {
 	Sleep();
 }
 
-void Program::CreateScene(std::string_view name) {
-	SceneStorage.CreateScene(name);
+Scene* Program::CreateScene(std::string_view name) {
+	return SceneStorage.CreateScene(name);
 }
 
 Scene* Program::GetScene(std::string_view name) {

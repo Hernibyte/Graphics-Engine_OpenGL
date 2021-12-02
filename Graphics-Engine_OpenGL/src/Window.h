@@ -1,7 +1,8 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include "Renderer.h"
+#include <iostream>
+#include "GLEW/include/GL/glew.h"
 #include "GLFW/include/glfw3.h"
 
 class Window {

@@ -1,7 +1,7 @@
 #ifndef PROGRAM_H
 #define PROGRAM_H
 
-#include "Window.h"
+#include "Renderer.h"
 
 class Program {
 public:
@@ -13,7 +13,7 @@ public:
 protected:
 	~Program() = default;
 
-	void CreateScene(std::string_view name);
+	Scene* CreateScene(std::string_view name);
 	Scene* GetScene(std::string_view name);
 
 	void SetMainScene(std::string_view name);

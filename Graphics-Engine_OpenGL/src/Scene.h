@@ -12,7 +12,7 @@ public:
 	Scene(int maxGameObjects);
 	~Scene();
 
-	void AddObject();
+	GameObject* AddObject();
 	GameObject* GetObject(int index);
 	std::vector<GameObject*> GetAllObjects();
 

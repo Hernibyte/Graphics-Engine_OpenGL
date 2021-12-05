@@ -103,6 +103,7 @@
     <ClCompile Include="src\InputSystem.cpp">
       <Filter>Source\InputSystem</Filter>
     </ClCompile>
+    <ClCompile Include="src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Window.h">

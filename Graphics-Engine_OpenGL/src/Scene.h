@@ -16,7 +16,11 @@ public:
 	GameObject* GetObject(int index);
 	std::vector<GameObject*> GetAllObjects();
 
+	void Name(std::string_view name);
+	std::string& Name();
+
 private:
+	std::string name;
 	std::vector<GameObject*> Objects;
 };
 

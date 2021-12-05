@@ -13,6 +13,8 @@ Program::Program(int width, int height, const char* tittle) {
 }
 
 void Program::Run() {
+	Init();
+
 	Core_Awake();
 	Awake();
 
@@ -50,6 +52,10 @@ Scene* Program::GetScene(std::string_view name) {
 
 void Program::SetMainScene(std::string_view name) {
 	mainScene = name.data();
+}
+
+void Program::SetMainScene(Scene* scene) {
+	mainScene = scene->Name();
 }
 
 void Program::Core_Awake() {

@@ -96,6 +96,9 @@ public:
 			return false;
 	}
 
+	void Name(std::string_view name);
+	std::string* Name();
+
 private:
 	std::vector<std::unique_ptr<Script>> components;
 
@@ -103,6 +106,8 @@ private:
 	ComponentBitSet componentBitSet;
 
 	InputSystem Input;
+
+	std::string name;
 };
 
 #endif // !GAMEOBJECT_H

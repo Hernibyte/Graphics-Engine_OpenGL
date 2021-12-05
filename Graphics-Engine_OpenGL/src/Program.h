@@ -17,7 +17,9 @@ protected:
 	Scene* GetScene(std::string_view name);
 
 	void SetMainScene(std::string_view name);
+	void SetMainScene(Scene* scene);
 
+	virtual void Init() {}
 	virtual void Awake() {}
 	virtual void Start() {}
 	virtual void LateUpdate() {}

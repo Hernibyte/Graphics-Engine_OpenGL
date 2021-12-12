@@ -62,6 +62,12 @@
     <Filter Include="Source\InputSystem">
       <UniqueIdentifier>{60ca8dc1-1460-41b5-b1ab-5d6265b3c1bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\CollisionManager">
+      <UniqueIdentifier>{09981c0b-5bef-42bc-979f-5ff2e72d04c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component\BoxCollider">
+      <UniqueIdentifier>{8da29f92-8249-4614-8197-c689fe768bd8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
@@ -103,7 +109,9 @@
     <ClCompile Include="src\InputSystem.cpp">
       <Filter>Source\InputSystem</Filter>
     </ClCompile>
-    <ClCompile Include="src\Source.cpp" />
+    <ClCompile Include="src\CollisionManager.cpp">
+      <Filter>Source\CollisionManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Window.h">
@@ -162,6 +170,12 @@
     </ClInclude>
     <ClInclude Include="src\KeyCode.h">
       <Filter>Source\InputSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CollisionManager.h">
+      <Filter>Source\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BoxCollider.h">
+      <Filter>Source\Component\BoxCollider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

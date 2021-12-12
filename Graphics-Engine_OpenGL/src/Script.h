@@ -17,6 +17,7 @@ public:
 	virtual void LateUpdate() {}
 	virtual void Update() {}
 	virtual void FixedUpdate() {}
+	virtual void OnCollisionStay() {}
 
 	virtual ~Script() {}
 };

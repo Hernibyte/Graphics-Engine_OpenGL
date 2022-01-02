@@ -3,6 +3,7 @@
 
 #include <list>
 #include "BoxCollider.h"
+#include "GameObject.h"
 
 class CollisionManager {
 public:

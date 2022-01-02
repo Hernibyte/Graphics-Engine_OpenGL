@@ -59,6 +59,11 @@ public:
 			c->FixedUpdate();
 	}
 
+	void OnCollisionStay() {
+		for (auto& c : components)
+			c->OnCollisionStay();
+	}
+
 	template <typename T> 
 	bool HasComponent() const {
 		return componentBitSet[GetComponentTypeID<T>];

@@ -11,8 +11,8 @@ public:
 	}
 
 	BoxCollider2D(Vector3 position, Vector3 scale) {
-		this->center = position;
-		this->halfwidths = scale;
+		center = position;
+		halfwidths = scale;
 	}
 
 	Vector3& Position() {

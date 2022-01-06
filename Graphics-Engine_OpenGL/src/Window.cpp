@@ -13,6 +13,7 @@ Window::~Window() {
 
 void Window::Width(int width)  {
 	this->width = width;
+	UpdateAttributes();
 }
 
 int Window::Width() {
@@ -21,6 +22,7 @@ int Window::Width() {
 
 void Window::Height(int height) {
 	this->height = height;
+	UpdateAttributes();
 }
 
 int Window::Height() {
@@ -29,6 +31,7 @@ int Window::Height() {
 
 void Window::Tittle(const char* tittle) {
 	this->tittle = tittle;
+	UpdateAttributes();
 }
 
 const char* Window::Tittle() {

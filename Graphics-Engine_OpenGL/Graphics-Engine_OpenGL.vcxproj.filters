@@ -65,8 +65,14 @@
     <Filter Include="Source\CollisionManager">
       <UniqueIdentifier>{09981c0b-5bef-42bc-979f-5ff2e72d04c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Component\BoxCollider">
+    <Filter Include="Source\Component\Colliders2D">
+      <UniqueIdentifier>{93c85213-77ca-449d-adb4-d8ce10e7c035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component\Colliders2D\BoxCollider">
       <UniqueIdentifier>{8da29f92-8249-4614-8197-c689fe768bd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component\Colliders2D\CircleCollider">
+      <UniqueIdentifier>{3b8a745b-d35b-4804-9a9c-9fce4e9ce435}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +181,10 @@
       <Filter>Source\CollisionManager</Filter>
     </ClInclude>
     <ClInclude Include="src\BoxCollider.h">
-      <Filter>Source\Component\BoxCollider</Filter>
+      <Filter>Source\Component\Colliders2D\BoxCollider</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CircleCollider2D.h">
+      <Filter>Source\Component\Colliders2D\CircleCollider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

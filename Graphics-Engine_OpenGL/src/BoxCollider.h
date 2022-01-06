@@ -7,7 +7,7 @@ class BoxCollider2D : public Script {
 public:
 	BoxCollider2D() {
 		center = { 0, 0, 0 };
-		halfwidths = { 0, 0, 0 };
+		halfwidths = { 0.5f, 0.5f, 0.0f };
 	}
 
 	BoxCollider2D(Vector3 position, Vector3 scale) {

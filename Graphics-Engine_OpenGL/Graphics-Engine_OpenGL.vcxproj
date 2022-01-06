@@ -173,6 +173,7 @@
     <ClInclude Include="libraries\MyMath\Vector3\vector3.h" />
     <ClInclude Include="libraries\MyMath\Vector4\Vector4.h" />
     <ClInclude Include="src\BoxCollider.h" />
+    <ClInclude Include="src\CircleCollider2D.h" />
     <ClInclude Include="src\CollisionManager.h" />
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\GameObject.h" />

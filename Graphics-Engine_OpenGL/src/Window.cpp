@@ -2,7 +2,7 @@
 
 Window Window::window;
 
-Window::Window() : width(1280), height(720), tittle("Window") {
+Window::Window() : width(800), height(800), tittle("Window") {
 	Start();
 }
 

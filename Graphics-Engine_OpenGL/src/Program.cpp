@@ -24,7 +24,7 @@ void Program::Run() {
 	Window::window.SetWindowShouldClose(true);
 
 	while (Window::window.IsWindowShouldClose()) {
-		Window::window.Clear();
+		Window::window.Clear(0, 0, 0, 0);
 
 		Core_LateUpdate();
 		LateUpdate();

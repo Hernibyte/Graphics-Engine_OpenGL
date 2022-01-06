@@ -56,18 +56,18 @@ namespace My
 	double Exp2(double value);
 	float Expm1(float value);
 	double Expm1(double value);
-	float Ilogb(float value);
-	double Ilogb(double value);
+	int Ilogb(float value);
+	int Ilogb(double value);
 	float Log1p(float value);
 	double Log1p(double value);
 	float Log2(float value);
 	double Log2(double value);
 	float Logb(float value);
 	double Logb(double value);
-	float Scalbln(float x, float y);
-	double Scalbln(double x, double y);
-	float Scalbn(float x, float y);
-	double Scalbn(double x, double y);
+	float Scalbln(float x, long y);
+	double Scalbln(double x, long y);
+	float Scalbn(float x, int y);
+	double Scalbn(double x, int y);
 
 	float Pow(float x, float y);
 	double Pow(double x, double y);

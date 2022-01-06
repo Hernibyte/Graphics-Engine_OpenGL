@@ -189,11 +189,11 @@ double My::Expm1(double value)
 	return expm1(value);
 }
 
-float My::Ilogb(float value)
+int My::Ilogb(float value)
 {
 	return ilogbf(value);
 }
-double My::Ilogb(double value)
+int My::Ilogb(double value)
 {
 	return ilogb(value);
 }
@@ -224,19 +224,19 @@ double My::Logb(double value)
 	return logb(value);
 }
 
-float My::Scalbln(float x, float y) {
+float My::Scalbln(float x, long y) {
 	return scalblnf(x, y);
 }
-double My::Scalbln(double x, double y)
+double My::Scalbln(double x, long y)
 {
 	return scalbln(x, y);
 }
 
-float My::Scalbn(float x, float y)
+float My::Scalbn(float x, int y)
 {
 	return scalbnf(x, y);
 }
-double My::Scalbn(double x, double y)
+double My::Scalbn(double x, int y)
 {
 	return scalbn(x, y);
 }

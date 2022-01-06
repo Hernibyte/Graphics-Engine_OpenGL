@@ -186,7 +186,7 @@ float* Matrix4x4::Value_ptr(int i)
 
 void Matrix4x4::Projection(const float& angleOfView, const float& near, const float& far)
 {
-	float scale = 1 / Tan(angleOfView * 0.5 * PI / 180);
+	float scale = static_cast<float>(1 / Tan(angleOfView * 0.5 * PI / 180));
 	value[0] = scale;
 	value[5] = scale;
 	value[10] = -far / (far - near);
@@ -257,7 +257,7 @@ float* Matrix4x4::Value_ptr(Matrix4x4 matrix)
 
 Matrix4x4 Matrix4x4::Projection(const float& angleOfView, const float& near, const float& far, Matrix4x4 matrix)
 {
-	float scale = 1 / Tan(angleOfView * 0.5 * PI / 180);
+	float scale = static_cast<float>(1 / Tan(angleOfView * 0.5 * PI / 180));
 	matrix.value[0] = scale;
 	matrix.value[5] = scale;
 	matrix.value[10] = -far / (far - near);

@@ -31,6 +31,8 @@ public:
 
 	GLFWwindow* glfwWindow();
 
+	void UpdateAttributes();
+
 	void Refresh();
 
 	void Clear(GLclampf r = 1, GLclampf g = 1, GLclampf b = 1, GLclampf a = 1);

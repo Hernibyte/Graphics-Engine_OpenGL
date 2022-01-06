@@ -2,7 +2,7 @@
 
 Window Window::window;
 
-Window::Window() : width(800), height(800), tittle("Window") {
+Window::Window() : width(100), height(100), tittle("Window") {
 	Start();
 }
 
@@ -47,6 +47,12 @@ bool Window::IsWindowShouldClose() {
 	return glfwWindowShouldClose(WinMain);
 }
 
+void Window::UpdateAttributes() {
+	glfwSetWindowTitle(WinMain, tittle);
+	glfwSetWindowSize(WinMain, width, height);
+	glViewport(0, 0, width, height);
+}
+
 void Window::Refresh() {
 	glfwSwapBuffers(WinMain);
 	glfwPollEvents();
@@ -72,9 +78,9 @@ void Window::Start() {
 	//
 	glfwMakeContextCurrent(WinMain);
 	//
-	int width, height;
-	glfwGetFramebufferSize(WinMain, &width, &height);
-	glViewport(0, 0, width, height);
+	int _width, _height;
+	glfwGetFramebufferSize(WinMain, &_width, &_height);
+	glViewport(0, 0, _width, _height);
 	//
 	glewInit();
 	//

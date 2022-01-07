@@ -19,8 +19,8 @@ public:
 	void CheckCollisions();
 
 private:
-	std::list<BoxCollider2D*> boxColliders;
-	std::list<CircleCollider2D*> circleColliders;
+	std::vector<BoxCollider2D*> boxColliders;
+	std::vector<CircleCollider2D*> circleColliders;
 };
 
 #endif // !COLLISIONMANAGER_H

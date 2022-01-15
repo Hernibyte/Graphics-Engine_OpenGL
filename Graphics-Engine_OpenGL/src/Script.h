@@ -5,6 +5,7 @@ class GameObject;
 struct Transform;
 struct InputSystem;
 #include "MyMath/My.h"
+#include "Time.h"
 
 class Script {
 public:

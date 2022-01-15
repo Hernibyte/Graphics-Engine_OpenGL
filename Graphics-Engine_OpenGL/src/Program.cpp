@@ -22,6 +22,8 @@ void Program::Run() {
 	Start();
 
 	while (!Window::window.IsWindowShouldClose()) {
+		Time::Start();
+
 		Window::window.Clear(0, 0, 0, 0);
 
 		Core_LateUpdate();
@@ -34,6 +36,8 @@ void Program::Run() {
 		FixedUpdate();
 
 		Window::window.Refresh();
+
+		Time::Tick();
 	}
 
 	Core_Sleep();

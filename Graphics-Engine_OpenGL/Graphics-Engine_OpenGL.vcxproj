@@ -162,6 +162,7 @@
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\SceneStorage.cpp" />
+    <ClCompile Include="src\Time.cpp" />
     <ClCompile Include="src\Transform.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
@@ -186,6 +187,7 @@
     <ClInclude Include="src\Script.h" />
     <ClInclude Include="src\ShaderProgramSource.h" />
     <ClInclude Include="src\SpriteRenderer.h" />
+    <ClInclude Include="src\Time.h" />
     <ClInclude Include="src\Transform.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>

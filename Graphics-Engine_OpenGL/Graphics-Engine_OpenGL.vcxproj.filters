@@ -74,6 +74,9 @@
     <Filter Include="Source\Component\Colliders2D\CircleCollider">
       <UniqueIdentifier>{3b8a745b-d35b-4804-9a9c-9fce4e9ce435}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Time">
+      <UniqueIdentifier>{e6e8194e-b23e-4cad-9a0e-cbe37074295e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
@@ -117,6 +120,9 @@
     </ClCompile>
     <ClCompile Include="src\CollisionManager.cpp">
       <Filter>Source\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Time.cpp">
+      <Filter>Source\Time</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +191,9 @@
     </ClInclude>
     <ClInclude Include="src\CircleCollider2D.h">
       <Filter>Source\Component\Colliders2D\CircleCollider</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Time.h">
+      <Filter>Source\Time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

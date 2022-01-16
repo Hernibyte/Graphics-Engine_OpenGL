@@ -155,12 +155,14 @@
     <ClCompile Include="libraries\MyMath\Quaternion\Quaternion.cpp" />
     <ClCompile Include="libraries\MyMath\Vector3\vector3.cpp" />
     <ClCompile Include="libraries\MyMath\Vector4\Vector4.cpp" />
+    <ClCompile Include="src\CollisionManager.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\InputSystem.cpp" />
     <ClCompile Include="src\Program.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\SceneStorage.cpp" />
+    <ClCompile Include="src\Time.cpp" />
     <ClCompile Include="src\Transform.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
@@ -171,6 +173,9 @@
     <ClInclude Include="libraries\MyMath\Quaternion\Quaternion.h" />
     <ClInclude Include="libraries\MyMath\Vector3\vector3.h" />
     <ClInclude Include="libraries\MyMath\Vector4\Vector4.h" />
+    <ClInclude Include="src\BoxCollider.h" />
+    <ClInclude Include="src\CircleCollider2D.h" />
+    <ClInclude Include="src\CollisionManager.h" />
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\GameObject.h" />
     <ClInclude Include="src\InputSystem.h" />
@@ -182,6 +187,7 @@
     <ClInclude Include="src\Script.h" />
     <ClInclude Include="src\ShaderProgramSource.h" />
     <ClInclude Include="src\SpriteRenderer.h" />
+    <ClInclude Include="src\Time.h" />
     <ClInclude Include="src\Transform.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>

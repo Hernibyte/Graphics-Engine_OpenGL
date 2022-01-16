@@ -59,6 +59,11 @@ public:
 			c->FixedUpdate();
 	}
 
+	void OnCollisionStay() {
+		for (auto& c : components)
+			c->OnCollisionStay();
+	}
+
 	template <typename T> 
 	bool HasComponent() const {
 		return componentBitSet[GetComponentTypeID<T>];
@@ -96,6 +101,9 @@ public:
 			return false;
 	}
 
+	void Name(std::string_view name);
+	std::string* Name();
+
 private:
 	std::vector<std::unique_ptr<Script>> components;
 
@@ -103,6 +111,8 @@ private:
 	ComponentBitSet componentBitSet;
 
 	InputSystem Input;
+
+	std::string name;
 };
 
 #endif // !GAMEOBJECT_H

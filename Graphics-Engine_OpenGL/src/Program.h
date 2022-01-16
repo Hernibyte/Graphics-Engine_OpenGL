@@ -2,6 +2,7 @@
 #define PROGRAM_H
 
 #include "Renderer.h"
+#include "CollisionManager.h"
 
 class Program {
 public:
@@ -17,7 +18,11 @@ protected:
 	Scene* GetScene(std::string_view name);
 
 	void SetMainScene(std::string_view name);
+	void SetMainScene(Scene* scene);
+	
+	CollisionManager collision_manager;
 
+	virtual void Init() {}
 	virtual void Awake() {}
 	virtual void Start() {}
 	virtual void LateUpdate() {}

@@ -2,6 +2,7 @@
 
 Scene* Scene_Storage::CreateScene(std::string_view name) {
 	scenes[name.data()] = Scene();
+	scenes[name.data()].Name(name.data());
 	return &scenes[name.data()];
 }
 

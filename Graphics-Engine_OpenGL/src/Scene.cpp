@@ -27,3 +27,11 @@ GameObject* Scene::GetObject(int index) {
 std::vector<GameObject*> Scene::GetAllObjects() {
 	return Objects;
 }
+
+void Scene::Name(std::string_view name) {
+	this->name = name.data();
+}
+
+std::string& Scene::Name() {
+	return name;
+}

@@ -1,8 +1,8 @@
 #include "Program.h"
 
 Program::Program() {
-	Window::window.Width(1280);
-	Window::window.Height(720);
+	Window::window.Width(800);
+	Window::window.Height(800);
 	Window::window.Tittle("Window");
 }
 
@@ -13,16 +13,18 @@ Program::Program(int width, int height, const char* tittle) {
 }
 
 void Program::Run() {
+	Init();
+
 	Core_Awake();
 	Awake();
 
 	Core_Start();
 	Start();
 
-	Window::window.SetWindowShouldClose(true);
+	while (!Window::window.IsWindowShouldClose()) {
+		Time::Start();
 
-	while (Window::window.IsWindowShouldClose()) {
-		Window::window.Clear();
+		Window::window.Clear(0, 0, 0, 0);
 
 		Core_LateUpdate();
 		LateUpdate();
@@ -34,6 +36,8 @@ void Program::Run() {
 		FixedUpdate();
 
 		Window::window.Refresh();
+
+		Time::Tick();
 	}
 
 	Core_Sleep();
@@ -50,6 +54,10 @@ Scene* Program::GetScene(std::string_view name) {
 
 void Program::SetMainScene(std::string_view name) {
 	mainScene = name.data();
+}
+
+void Program::SetMainScene(Scene* scene) {
+	mainScene = scene->Name();
 }
 
 void Program::Core_Awake() {
@@ -72,6 +80,8 @@ void Program::Core_Start() {
 
 void Program::Core_LateUpdate() {
 	Renderer::render.Draw(*SceneStorage.GetScene(mainScene));
+
+	collision_manager.CheckCollisions();
 
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
 		g->LateUpdate();

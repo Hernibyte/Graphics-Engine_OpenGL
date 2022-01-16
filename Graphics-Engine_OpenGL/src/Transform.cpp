@@ -59,6 +59,10 @@ void Transform::SetPosition(float x, float y, float z) {
 	myposition[1] = y;
 	myposition[2] = z;
 
+	position.x = x;
+	position.y = y;
+	position.z = z;
+
 	translate = glm::translate(glm::mat4(1.0f), myposition);
 	UpdateModel();
 }
@@ -67,6 +71,10 @@ void Transform::SetPosition(My::Vector3 vector) {
 	myposition[0] = vector.x;
 	myposition[1] = vector.y;
 	myposition[2] = vector.z;
+
+	position.x = vector.x;
+	position.y = vector.y;
+	position.z = vector.z;
 
 	translate = glm::translate(glm::mat4(1.0f), myposition);
 	UpdateModel();
@@ -77,6 +85,10 @@ void Transform::Translate(float x, float y, float z) {
 	myposition[1] += y;
 	myposition[2] += z;
 
+	position.x += x;
+	position.y += y;
+	position.z += z;
+
 	translate = glm::translate(glm::mat4(1.0f), myposition);
 	UpdateModel();
 }
@@ -86,6 +98,10 @@ void Transform::Translate(My::Vector3 vector) {
 	myposition[1] += vector.y;
 	myposition[2] += vector.z;
 
+	position.x += vector.x;
+	position.y += vector.y;
+	position.z += vector.z;
+
 	translate = glm::translate(glm::mat4(1.0f), myposition);
 	UpdateModel();
 }
@@ -94,6 +110,10 @@ void Transform::Scale(float x, float y, float z) {
 	mylocalScale[0] = x;
 	mylocalScale[1] = y;
 	mylocalScale[2] = z;
+
+	localScale.x = x;
+	localScale.y = y;
+	localScale.z = z;
 
 	scale = glm::scale(glm::mat4(1.0f), mylocalScale);
 	UpdateModel();
@@ -106,6 +126,8 @@ void Transform::RotateX(float x) {
 	axis[1] = 0.0f;
 	axis[2] = 0.0f;
 
+	rotation.x = x;
+
 	rotatex = glm::rotate(glm::mat4(1.0f), x, axis);
 	UpdateModel();
 }
@@ -117,6 +139,8 @@ void Transform::RotateY(float y) {
 	axis[1] = 1.0f;
 	axis[2] = 0.0f;
 
+	rotation.y = y;
+
 	rotatey = glm::rotate(glm::mat4(1.0f), y, axis);
 	UpdateModel();
 }
@@ -127,6 +151,8 @@ void Transform::RotateZ(float z) {
 	axis[0] = 0.0f;
 	axis[1] = 0.0f;
 	axis[2] = 1.0f;
+
+	rotation.z = z;
 
 	rotatez = glm::rotate(glm::mat4(1.0f), z, axis);
 	UpdateModel();

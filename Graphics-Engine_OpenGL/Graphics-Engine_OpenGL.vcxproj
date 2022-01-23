@@ -186,6 +186,7 @@
     <ClInclude Include="src\SceneStorage.h" />
     <ClInclude Include="src\Script.h" />
     <ClInclude Include="src\ShaderProgramSource.h" />
+    <ClInclude Include="src\ShapeRenderer.h" />
     <ClInclude Include="src\SpriteRenderer.h" />
     <ClInclude Include="src\Time.h" />
     <ClInclude Include="src\Transform.h" />

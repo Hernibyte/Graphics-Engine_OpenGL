@@ -8,14 +8,10 @@ Renderer::Renderer() {
 	vbo = 0;
 	ebo = 0;
 
-	sprite = new SpriteRenderer();
-
 	modelLocation = 0;
 }
 
 Renderer::~Renderer() {
-	if(sprite != nullptr)
-		delete sprite;
 	ClearBuffers();
 }
 
@@ -35,21 +31,26 @@ unsigned int& Renderer::EBO() {
 	return ebo;
 }
 
-void Renderer::Draw(Scene& scene) {
+void Renderer::LoadComponents(Scene& scene) {
 	for (auto& g : scene.GetAllObjects()) {
-		if (g->TryGetComponent<SpriteRenderer>(*sprite)) {
-			glUniformMatrix4fv(modelLocation, 1, GL_FALSE,
-				glm::value_ptr(sprite->gameObject->transform.Model()));
+		if(g->HasComponent<ShapeRenderer>())
+			shape_list.push_back(&g->GetComponent<ShapeRenderer>());
+	}
+}
 
-			glBufferData(GL_ARRAY_BUFFER, 
-				sizeof(sprite->vertex), sprite->vertex,
-				GL_DYNAMIC_DRAW);
+void Renderer::Draw() {
+	for (auto& g : shape_list) {
+		glUniformMatrix4fv(modelLocation, 1, GL_FALSE,
+			glm::value_ptr(g->gameObject->transform.Model()));
 
-			glBufferData(GL_ELEMENT_ARRAY_BUFFER, 
-				sizeof(sprite->index), sprite->index, 
-				GL_DYNAMIC_DRAW);
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		}
+		glBufferData(GL_ARRAY_BUFFER, 
+			sizeof(g->vertex), g->vertex,
+			GL_DYNAMIC_DRAW);
+
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, 
+			sizeof(g->index), g->index, 
+			GL_DYNAMIC_DRAW);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	}
 }
 

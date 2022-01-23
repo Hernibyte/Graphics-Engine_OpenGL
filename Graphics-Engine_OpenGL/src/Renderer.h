@@ -5,6 +5,7 @@
 #include "ShaderProgramSource.h"
 #include "SceneStorage.h"
 #include "SpriteRenderer.h"
+#include "ShapeRenderer.h"
 #include <fstream>
 #include <sstream>
 
@@ -28,7 +29,9 @@ public:
 
 	unsigned int& EBO();
 
-	void Draw(Scene& scene);
+	void LoadComponents(Scene& scene);
+
+	void Draw();
 
 	ShaderProgramSource ParceShader(const std::string_view filepath);
 
@@ -50,10 +53,11 @@ private:
 	unsigned int program;
 
 	unsigned int CompileShader(unsigned int type, const std::string& source);
-
-	SpriteRenderer* sprite;
 	
 	unsigned int modelLocation;
+
+	using Shape = std::list<ShapeRenderer*>;
+	Shape shape_list;
 };
 
 #endif // !RENDERER_H

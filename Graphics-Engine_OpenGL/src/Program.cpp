@@ -68,19 +68,19 @@ void Program::Core_Awake() {
 	Renderer::render.BindBuffers();
 	Renderer::render.VertexAttributes();
 	Renderer::render.GetUniformsLocation();
-
+	Renderer::render.LoadComponents(*SceneStorage.GetScene(mainScene));
+	
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
 		g->Awake();
 }
 
 void Program::Core_Start() {
+	
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
 		g->Start();
 }
 
 void Program::Core_LateUpdate() {
-	Renderer::render.Draw(*SceneStorage.GetScene(mainScene));
-
 	collision_manager.CheckCollisions();
 
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
@@ -88,6 +88,8 @@ void Program::Core_LateUpdate() {
 }
 
 void Program::Core_Update() {
+	Renderer::render.Draw();
+
 	for (auto& g : SceneStorage.GetScene(mainScene)->GetAllObjects())
 		g->Update();
 }

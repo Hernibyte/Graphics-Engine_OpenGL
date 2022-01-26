@@ -9,6 +9,7 @@ Renderer::Renderer() {
 	ebo = 0;
 
 	modelLocation = 0;
+	typeLocation = 0;
 }
 
 Renderer::~Renderer() {
@@ -32,13 +33,26 @@ unsigned int& Renderer::EBO() {
 }
 
 void Renderer::LoadComponents(Scene& scene) {
+	//shape
 	for (auto& g : scene.GetAllObjects()) {
 		if(g->HasComponent<ShapeRenderer>())
 			shape_list.push_back(&g->GetComponent<ShapeRenderer>());
 	}
+
+	//sprite
+	for (auto& g : scene.GetAllObjects()) {
+		if (g->HasComponent<SpriteRenderer>())
+			sprite_list.push_back(&g->GetComponent<SpriteRenderer>());
+	}
+
+	for (auto& g : sprite_list) {
+		GenerateTexture(g->texture);
+	}
 }
 
 void Renderer::Draw() {
+	glUniform1i(typeLocation, 0);
+
 	for (auto& g : shape_list) {
 		glUniformMatrix4fv(modelLocation, 1, GL_FALSE,
 			glm::value_ptr(g->gameObject->transform.Model()));
@@ -50,6 +64,27 @@ void Renderer::Draw() {
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, 
 			sizeof(g->index), g->index, 
 			GL_DYNAMIC_DRAW);
+
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+	}
+
+	glUniform1i(typeLocation, 1);
+
+	for (auto& g : sprite_list) {
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, g->texture.texture);
+
+		glUniformMatrix4fv(modelLocation, 1, GL_FALSE,
+			glm::value_ptr(g->gameObject->transform.Model()));
+
+		glBufferData(GL_ARRAY_BUFFER,
+			sizeof(g->vertex), g->vertex,
+			GL_DYNAMIC_DRAW);
+
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+			sizeof(g->index), g->index,
+			GL_DYNAMIC_DRAW);
+
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	}
 }
@@ -72,17 +107,19 @@ void Renderer::ClearBuffers() {
 }
 
 void Renderer::VertexAttributes() {
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
-
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+	glEnableVertexAttribArray(2);
 }
 
 void Renderer::GetUniformsLocation() {
 	modelLocation = glGetUniformLocation(program, "model");
+	typeLocation = glGetUniformLocation(program, "type");
 }
 
 ShaderProgramSource Renderer::ParceShader(const std::string_view filepath) {
@@ -151,4 +188,35 @@ void Renderer::CreateProgram(const std::string& vertexShaderSource, const std::s
 	glDetachShader(program, fragment);
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);
+}
+
+void Renderer::GenerateTexture(Texture& tex) {
+	glGenTextures(1, &tex.texture);
+	glBindTexture(GL_TEXTURE_2D, tex.texture);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	if (tex.data) {
+		switch (tex.type) {
+		case 0:
+			glTexImage2D(
+				GL_TEXTURE_2D, 0,
+				GL_RGB, tex.width,
+				tex.height, 0, GL_RGB,
+				GL_UNSIGNED_BYTE, tex.data);
+			break;
+		case 1:
+			glTexImage2D(
+				GL_TEXTURE_2D, 0,
+				GL_RGBA, tex.width,
+				tex.height, 0, GL_RGBA,
+				GL_UNSIGNED_BYTE, tex.data);
+			break;
+		}
+
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
 }

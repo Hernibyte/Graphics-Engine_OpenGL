@@ -5,11 +5,11 @@
 
 class ShapeRenderer : public Script {
 public:
-	float vertex[24] = {
-		 0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 1.0f,
-		 0.5f, -0.5f, 0.0f,   1.0f, 1.0f, 1.0f,
-		-0.5f, -0.5f, 0.0f,   1.0f, 1.0f, 1.0f,
-		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 1.0f
+	float vertex[32] = {
+		 0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 1.0f,   1.0f, 1.0f,
+		 0.5f, -0.5f, 0.0f,   1.0f, 1.0f, 1.0f,   1.0f, 0.0f,
+		-0.5f, -0.5f, 0.0f,   1.0f, 1.0f, 1.0f,   0.0f, 0.0f,
+		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 1.0f,   0.0f, 1.0f
 	};
 	unsigned int index[6] = {
 		0, 1, 3,

@@ -53,11 +53,15 @@ private:
 	unsigned int program;
 
 	unsigned int CompileShader(unsigned int type, const std::string& source);
-	
+	void GenerateTexture(Texture& tex);
+
 	unsigned int modelLocation;
+	unsigned int typeLocation;
 
 	using Shape = std::list<ShapeRenderer*>;
 	Shape shape_list;
+	using Sprite = std::list<SpriteRenderer*>;
+	Sprite sprite_list;
 };
 
 #endif // !RENDERER_H

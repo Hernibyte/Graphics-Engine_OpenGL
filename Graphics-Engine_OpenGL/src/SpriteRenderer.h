@@ -1,8 +1,9 @@
 #ifndef SPRITERENDERER_H
 #define SPRITERENDERER_H
 
-#include "Script.h"
+#include "GameObject.h"
 #include "TextureImporter.h"
+#include "Animation.h"
 
 class SpriteRenderer : public Script {
 public:
@@ -44,6 +45,11 @@ public:
 		ChangeColor(rgb.x, rgb.y, rgb.z);
 	}
 
+	My::Vector3 Color() { 
+		return 
+			My::Vector3{ vertex[3], vertex[4], vertex[5] }; 
+	}
+
 	void ChangeAlpha(float alpha) {
 		vertex[6] = alpha;
 		vertex[15] = alpha;
@@ -51,15 +57,25 @@ public:
 		vertex[33] = alpha;
 	}
 
-	void ChangeUV(float u, float v) {
-		vertex[7] = u;
-		vertex[16] = u;
-		vertex[25] = u;
-		vertex[34] = u;
+	float Alpha() { return vertex[6]; }
 
+	void SetUVPoint1(float u, float v) {
+		vertex[7] = u;
 		vertex[8] = v;
+	}
+
+	void SetUVPoint2(float u, float v) {
+		vertex[16] = u;
 		vertex[17] = v;
+	}
+
+	void SetUVPoint3(float u, float v) {
+		vertex[25] = u;
 		vertex[26] = v;
+	}
+
+	void SetUVPoint4(float u, float v) {
+		vertex[34] = u;
 		vertex[35] = v;
 	}
 private:

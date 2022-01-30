@@ -1,7 +1,7 @@
 #ifndef BOXCOLLIDER_H
 #define BOXCOLLIDER_H
 
-#include "Script.h"
+#include "SpriteRenderer.h"
 
 class BoxCollider2D : public Script {
 public:

@@ -4,7 +4,7 @@
 #include "GLEW/include/GL/glew.h"
 #include "ShaderProgramSource.h"
 #include "SceneStorage.h"
-#include "SpriteRenderer.h"
+#include "Animator2D.h"
 #include "ShapeRenderer.h"
 #include <fstream>
 #include <sstream>

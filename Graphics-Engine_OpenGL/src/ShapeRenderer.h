@@ -1,7 +1,7 @@
 #ifndef SHAPERENDERER_H
 #define SHAPERENDERER_H
 
-#include "Script.h"
+#include "GameObject.h"
 
 class ShapeRenderer : public Script {
 public:

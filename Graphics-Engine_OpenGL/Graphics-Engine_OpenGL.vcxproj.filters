@@ -83,6 +83,12 @@
     <Filter Include="Source\TextureImporter">
       <UniqueIdentifier>{d1de3550-7c3b-4578-9268-fdd7ef0a0ea0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Component\Animator">
+      <UniqueIdentifier>{3ea5b688-ae6c-49b3-a5cc-cbfa757322ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Animation">
+      <UniqueIdentifier>{912674a7-6e04-49b3-bf57-f9cbaa07725d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Window.cpp">
@@ -135,6 +141,9 @@
     </ClCompile>
     <ClCompile Include="src\TextureImporter.cpp">
       <Filter>Source\TextureImporter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animation.cpp">
+      <Filter>Source\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +224,18 @@
     </ClInclude>
     <ClInclude Include="src\TextureImporter.h">
       <Filter>Source\TextureImporter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animator2D.h">
+      <Filter>Source\Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UVCoord.h">
+      <Filter>Source\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animation.h">
+      <Filter>Source\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Frame.h">
+      <Filter>Source\Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

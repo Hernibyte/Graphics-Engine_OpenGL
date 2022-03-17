@@ -1,13 +1,246 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>{9bd78541-a274-4919-a025-1cccc98afe09}</UniqueIdentifier>
+      <UniqueIdentifier>{812d3eab-71c1-4910-90dc-809bdd4d0c7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Renderer">
+      <UniqueIdentifier>{fe971325-1212-4cdd-877f-bd624333be38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Program">
+      <UniqueIdentifier>{99aa8a4c-d602-453c-8271-1f2564177aa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Window">
+      <UniqueIdentifier>{4626e457-3596-4c5b-9402-529dc689d0df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{1dfa7c79-b0b2-4196-91d5-71b1efcf5a3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\StandardShader">
+      <UniqueIdentifier>{3649321a-56ca-4478-844c-54cd1aed9666}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scenes">
+      <UniqueIdentifier>{972a735d-97eb-4fb8-b8cb-f0455bfbf750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameObject">
+      <UniqueIdentifier>{0fd6b253-1aea-4234-b111-4e87e0c13aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component">
+      <UniqueIdentifier>{033b3101-082a-4d57-932d-d5f2e41b5edc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath">
+      <UniqueIdentifier>{74d1da1b-d0b4-4db7-b519-442ac9a888c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Entity">
+      <UniqueIdentifier>{42c012d3-c12e-4735-9d47-c48ce303b29d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\Vector3">
+      <UniqueIdentifier>{74194df9-c373-4c25-a31e-0a3a2be7486b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\Vector4">
+      <UniqueIdentifier>{6a3e8a1e-406a-40cf-b870-53444d4b5434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\Quaternion">
+      <UniqueIdentifier>{23993420-ccb7-4815-b5b7-d2615a22bc5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\Matrix4x4">
+      <UniqueIdentifier>{5204340f-347d-4384-bd0a-5bb0127f07ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\MyMath\MathEx">
+      <UniqueIdentifier>{a6ba2816-6986-4b8d-b37c-54d91a798ae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Transform">
+      <UniqueIdentifier>{19bd8472-1f84-4af0-a7c0-d67d2a544dae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\InputSystem">
+      <UniqueIdentifier>{60ca8dc1-1460-41b5-b1ab-5d6265b3c1bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CollisionManager">
+      <UniqueIdentifier>{09981c0b-5bef-42bc-979f-5ff2e72d04c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component\Colliders2D">
+      <UniqueIdentifier>{93c85213-77ca-449d-adb4-d8ce10e7c035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component\Colliders2D\BoxCollider">
+      <UniqueIdentifier>{8da29f92-8249-4614-8197-c689fe768bd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component\Colliders2D\CircleCollider">
+      <UniqueIdentifier>{3b8a745b-d35b-4804-9a9c-9fce4e9ce435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Time">
+      <UniqueIdentifier>{e6e8194e-b23e-4cad-9a0e-cbe37074295e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component\Renderers">
+      <UniqueIdentifier>{37d16ff1-6bb7-4725-ab99-975cd1c2d52b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\stbi">
+      <UniqueIdentifier>{dd7dd0b3-c2ea-4078-8aab-7dab8d250c56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\TextureImporter">
+      <UniqueIdentifier>{d1de3550-7c3b-4578-9268-fdd7ef0a0ea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Component\Animator">
+      <UniqueIdentifier>{3ea5b688-ae6c-49b3-a5cc-cbfa757322ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Animation">
+      <UniqueIdentifier>{912674a7-6e04-49b3-bf57-f9cbaa07725d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Source.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>Source\Window</Filter>
     </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Source\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Program.cpp">
+      <Filter>Source\Program</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene.cpp">
+      <Filter>Source\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneStorage.cpp">
+      <Filter>Source\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject.cpp">
+      <Filter>Source\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\Vector3\vector3.cpp">
+      <Filter>Tools\MyMath\Vector3</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\Vector4\Vector4.cpp">
+      <Filter>Tools\MyMath\Vector4</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\Quaternion\Quaternion.cpp">
+      <Filter>Tools\MyMath\Quaternion</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\Matrix4x4\Matrix4x4.cpp">
+      <Filter>Tools\MyMath\Matrix4x4</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\MyMath\MathEx\MathEx.cpp">
+      <Filter>Tools\MyMath\MathEx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Transform.cpp">
+      <Filter>Source\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputSystem.cpp">
+      <Filter>Source\InputSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CollisionManager.cpp">
+      <Filter>Source\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Time.cpp">
+      <Filter>Source\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stb_image.cpp">
+      <Filter>Tools\stbi</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextureImporter.cpp">
+      <Filter>Source\TextureImporter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animation.cpp">
+      <Filter>Source\Animation</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Window.h">
+      <Filter>Source\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Renderer.h">
+      <Filter>Source\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Program.h">
+      <Filter>Source\Program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShaderProgramSource.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene.h">
+      <Filter>Source\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneStorage.h">
+      <Filter>Source\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject.h">
+      <Filter>Source\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Script.h">
+      <Filter>Source\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpriteRenderer.h">
+      <Filter>Source\Component\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\My.h">
+      <Filter>Tools\MyMath</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity.h">
+      <Filter>Source\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\Vector3\vector3.h">
+      <Filter>Tools\MyMath\Vector3</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\Vector4\Vector4.h">
+      <Filter>Tools\MyMath\Vector4</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\Quaternion\Quaternion.h">
+      <Filter>Tools\MyMath\Quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\Matrix4x4\Matrix4x4.h">
+      <Filter>Tools\MyMath\Matrix4x4</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\MyMath\MathEx\MathEx.h">
+      <Filter>Tools\MyMath\MathEx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Transform.h">
+      <Filter>Source\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputSystem.h">
+      <Filter>Source\InputSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KeyCode.h">
+      <Filter>Source\InputSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CollisionManager.h">
+      <Filter>Source\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BoxCollider.h">
+      <Filter>Source\Component\Colliders2D\BoxCollider</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CircleCollider2D.h">
+      <Filter>Source\Component\Colliders2D\CircleCollider</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Time.h">
+      <Filter>Source\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShapeRenderer.h">
+      <Filter>Source\Component\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stb_image.h">
+      <Filter>Tools\stbi</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TextureImporter.h">
+      <Filter>Source\TextureImporter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animator2D.h">
+      <Filter>Source\Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UVCoord.h">
+      <Filter>Source\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animation.h">
+      <Filter>Source\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Frame.h">
+      <Filter>Source\Animation</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\StandardShader\StandardShader.glsl">
+      <Filter>Tools\StandardShader</Filter>
+    </None>
   </ItemGroup>
 </Project>
